@@ -1,0 +1,27 @@
+.appbody
+{
+    background: #097C9B;
+    border: 1px solid #ff0;
+    padding: 10px;
+    margin: auto;
+    min-width: 30em;
+    max-width: 30em;
+    text-align: center;
+}
+#txtinput
+{
+    text-align: center;
+    width: 20em;
+    height: 30px;
+    font-size: 24px;
+    color: #CC0000;
+    background-color: #fff;
+}
+button
+{
+    background-color: #fff;
+    width: 150px;
+    height: 60px;
+    font-size: 20px;
+    border: 1px solid #097C98;
+}
