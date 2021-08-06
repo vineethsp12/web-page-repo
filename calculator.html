@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="appbody">
+        <p id="txtinput">
+        </p>
+        <div id="calbutton">
+            <button id="num1" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+                onclick="displayValue(this.id);" value="1">
+                1</button>
+            <button id="num2" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="2">
+                2</button>
+            <button id="num3" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="3">
+                3</button>
+            <button id="add" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayInput(this.value);" value="+">
+                +</button>
+            <button id="power" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="^">
+                ^</button>
+            <button id="num4" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="4">
+                4</button>
+            <button id="num5" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="5">
+                5</button>
+            <button id="num6" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="6">
+                6</button>
+            <button id="multiply" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayInput(this.value);" value="*">
+                *</button>
+            <button id="sqrt" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="sqrt">
+                Sqrt()</button>
+            <button id="num7" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="7">
+                7</button>
+            <button id="num8" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="8">
+                8</button>
+            <button id="num9" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="9">
+                9</button>
+            <button id="subtract" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayInput(this.value);" value="-">
+                -</button>
+            <button id="clear" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="clearBox();" value="Clear">
+                Clear</button>
+            <button id="percent" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"onclick="displayInput(this.value);" value="%">
+                %</button>
+            <button id="num0" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="0">
+                0</button>
+            <button id="num00" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayValue(this.id);" value="00">
+                00</button>
+            <button id="divide" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="displayInput(this.value);" value="/">
+                /</button>
+            <button id="equals" onmouseover="setColor(this.id);" onmouseout="removeColor(this.id);"
+            onclick="Calculate();" value="=">
+                =</button>
+        </div>
+    </div>
+    <script>
+        var val1;
+        var val2;
+        var resultval;
+        var op;
+        var color = "#ffff80";
+        function setColor(id)
+        {
+           var element = document.getElementById(id);
+           element.style.backgroundColor = color;
+        }
+        function removeColor(id)
+        {
+           var color1=""
+           var element = document.getElementById(id);
+           element.style.backgroundColor = color1;
+        }
+        function displayValue(inputid)
+        {
+           var element = document.getElementById(inputid);
+           document.getElementById("txtinput").innerHTML = document.getElementById("txtinput").innerHTML + '' + element.value;
+        }
+        function displayInput(operation)
+        {
+            val1 = parseInt(document.getElementById("txtinput").innerHTML);
+            op = operation;
+            document.getElementById("txtinput").innerHTML = op;
+            document.getElementById("txtinput").innerHTML ="";
+        }
+        function Calculate()
+      {
+            val2 = parseInt(document.getElementById("txtinput").innerHTML);
+            document.getElementById("txtinput").innerHTML = "";
+            if (op == "*")
+        {
+                resultval = val1 * val2;
+            }
+            if (op == "+")
+            {
+                resultval = val1 + val2;
+            }
+            if (op == "-")
+            {
+                resultval = val1 - val2;
+            }
+            if (op == "/")
+            {
+                resultval = val1 / val2;
+            }
+            if (op == "%")
+            {
+                resultval = val1 % val2;
+            }
+            document.getElementById("txtinput").innerHTML = "";
+            document.getElementById("txtinput").innerHTML = resultval.toString();
+            document.getElementById("txtinput").innerHTML = val1 + op + val2 + " = " + resultval.toString();
+            return;
+        }
+        function clearBox()
+        {
+            document.getElementById("txtinput").innerHTML = "";
+            return;
+        }
+    </script>
+</body>
+</html>
